@@ -17,5 +17,5 @@ After clicking this you will reset the quiz and quiz clock to begin another quiz
 
 Screenshots:
 
-I attempted to attach screenshots to this read me but was unssuccessful
+I attempted to attach screenshots to this read me but was unsuccessful
 
