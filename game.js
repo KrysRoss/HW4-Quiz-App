@@ -114,11 +114,6 @@ choices.forEach((choice) => {
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset["number"];
 
-    // let classToApply = "incorrect";
-    // if (selectedAnswer == currentQuestion.answer) {
-    //   classToApply = "correct";
-    // }
-
     const classToApply =
       selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
 
@@ -130,9 +125,15 @@ choices.forEach((choice) => {
     }
 
     selectedChoice.parentElement.classList.add(classToApply);
+
+    let gameOver = questionCounter === MAX_QUESTIONS;
     setTimeout(() => {
-      selectedChoice.parentElement.classList.remove(classToApply);
-      getNewQuestion();
+      if (gameOver) {
+        endGame();
+      } else {
+        selectedChoice.parentElement.classList.remove(classToApply);
+        getNewQuestion();
+      }
     }, 1000);
   });
 });
